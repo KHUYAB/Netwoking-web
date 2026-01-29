@@ -1,14 +1,11 @@
 {
-  "version": 2,
-  "functions": {
-    "app.py": {
-      "runtime": "python3.11"
-    }
-  },
-  "routes": [
+  "rewrites": [
     {
-      "src": "/(.*)",
-      "dest": "app.py"
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
-  ]
+  ],
+  "buildCommand": null,
+  "outputDirectory": ".",
+  "framework": null
 }
