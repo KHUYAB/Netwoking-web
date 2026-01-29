@@ -1,11 +1,15 @@
 {
-  "rewrites": [
+  "version": 2,
+  "builds": [
     {
-      "source": "/(.*)",
-      "destination": "/index.html"
+      "src": "**/*.html",
+      "use": "@vercel/static"
     }
   ],
-  "buildCommand": null,
-  "outputDirectory": ".",
-  "framework": null
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
 }
