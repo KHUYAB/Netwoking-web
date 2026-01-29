@@ -1,0 +1,133 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section d-flex align-items-center">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h1 class="display-4 fw-bold mb-4">Enterprise-Grade Networking Solutions</h1>
+                <p class="lead mb-4">We design, install, and maintain robust network infrastructure that powers modern businesses. Reliable, scalable, and secure networking solutions.</p>
+                <div class="d-flex gap-3">
+                    <a href="{{ url_for('services') }}" class="btn btn-primary btn-lg px-4">
+                        <i class="bi bi-list-check me-2"></i>Our Services
+                    </a>
+                    <a href="{{ url_for('contact') }}" class="btn btn-outline-light btn-lg px-4">
+                        <i class="bi bi-chat-dots me-2"></i>Get In Touch
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center">
+                <div class="hero-image">
+                    <i class="bi bi-diagram-3-fill text-primary" style="font-size: 15rem;"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Preview -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Our Core Services</h2>
+            <p class="text-muted">Comprehensive networking solutions for your business</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-3">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <i class="bi bi-ethernet text-primary fs-1 mb-3"></i>
+                        <h5 class="card-title">Network Installation</h5>
+                        <p class="card-text">Complete network setup and configuration for new offices and facilities.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <i class="bi bi-hdd-network text-primary fs-1 mb-3"></i>
+                        <h5 class="card-title">Structured Cabling</h5>
+                        <p class="card-text">Professional cable management and infrastructure installation.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <i class="bi bi-wifi text-primary fs-1 mb-3"></i>
+                        <h5 class="card-title">WiFi Solutions</h5>
+                        <p class="card-text">High-performance wireless networks for seamless connectivity.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <i class="bi bi-camera-video text-primary fs-1 mb-3"></i>
+                        <h5 class="card-title">CCTV Systems</h5>
+                        <p class="card-text">Advanced surveillance systems for security and monitoring.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Why Choose Us -->
+<section class="py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h2 class="fw-bold mb-4">Why Choose NetConnect Solutions?</h2>
+                <div class="mb-4">
+                    <h5><i class="bi bi-check-circle-fill text-success me-2"></i>Certified Professionals</h5>
+                    <p class="text-muted">Our team holds industry certifications and extensive experience.</p>
+                </div>
+                <div class="mb-4">
+                    <h5><i class="bi bi-clock-history text-primary me-2"></i>24/7 Support</h5>
+                    <p class="text-muted">Round-the-clock monitoring and support for your critical infrastructure.</p>
+                </div>
+                <div class="mb-4">
+                    <h5><i class="bi bi-shield-check text-primary me-2"></i>Quality Guarantee</h5>
+                    <p class="text-muted">We stand behind our work with comprehensive service warranties.</p>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="stats-card p-4 rounded shadow">
+                    <h4 class="text-center mb-4">Our Impact</h4>
+                    <div class="row text-center">
+                        <div class="col-6 mb-4">
+                            <h3 class="text-primary fw-bold">250+</h3>
+                            <p>Projects Completed</p>
+                        </div>
+                        <div class="col-6 mb-4">
+                            <h3 class="text-primary fw-bold">15+</h3>
+                            <p>Years Experience</p>
+                        </div>
+                        <div class="col-6">
+                            <h3 class="text-primary fw-bold">99.9%</h3>
+                            <p>Uptime Guarantee</p>
+                        </div>
+                        <div class="col-6">
+                            <h3 class="text-primary fw-bold">500+</h3>
+                            <p>Happy Clients</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-5 bg-primary text-white">
+    <div class="container text-center">
+        <h2 class="fw-bold mb-4">Ready to Transform Your Network Infrastructure?</h2>
+        <p class="lead mb-4">Contact us today for a free consultation and network assessment.</p>
+        <a href="{{ url_for('contact') }}" class="btn btn-light btn-lg px-5">
+            <i class="bi bi-telephone-outbound me-2"></i>Schedule Consultation
+        </a>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,12 @@
+import sqlite3
+
+db = sqlite3.connect("tasks.db")
+cursor = db.cursor()
+cursor.execute("""
+CREATE TABLE tasks (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT
+)
+""")
+db.commit()
+db.close()

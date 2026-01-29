@@ -1,0 +1,200 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="page-header py-5 text-white" 
+    style="
+        background: linear-gradient(rgba(13, 110, 253, 0.85), rgba(0, 31, 63, 0.9)), 
+                    url('https://images.unsplash.com/photo-1516116216624-53e697fedbea?q=80&w=2000&auto=format&fit=crop');
+        background-size: cover; 
+        background-position: center;
+        background-attachment: fixed; /* Optional: Nagbibigay ng parallax effect */
+    ">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h1 class="display-4 fw-bold mb-3">Our Professional Services</h1>
+                <p class="lead text-light">Comprehensive networking solutions tailored to your business needs</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services List -->
+<section class="py-5">
+    <div class="container">
+        <div class="row g-5">
+            <!-- Service 1 -->
+            <div class="col-lg-6">
+                <div class="service-card p-4 rounded shadow-sm h-100">
+                    <div class="d-flex align-items-start mb-4">
+                        <div class="service-icon me-4">
+                            <i class="bi bi-ethernet text-primary fs-1"></i>
+                        </div>
+                        <div>
+                            <h3 class="fw-bold">Network Installation & Configuration</h3>
+                            <p class="text-muted">Complete setup of enterprise network infrastructure</p>
+                        </div>
+                    </div>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Server room setup and configuration</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Switch and router installation</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Firewall and security implementation</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Network segmentation and VLAN setup</li>
+                        <li><i class="bi bi-check-circle-fill text-success me-2"></i>Quality of Service (QoS) configuration</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="col-lg-6">
+                <div class="service-card p-4 rounded shadow-sm h-100">
+                    <div class="d-flex align-items-start mb-4">
+                        <div class="service-icon me-4">
+                            <i class="bi bi-hdd-network text-primary fs-1"></i>
+                        </div>
+                        <div>
+                            <h3 class="fw-bold">Structured Cabling</h3>
+                            <p class="text-muted">Professional cable management solutions</p>
+                        </div>
+                    </div>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>CAT6/6A/7 cable installation</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Fiber optic cabling</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Cable pathway design and installation</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Patch panel installation and termination</li>
+                        <li><i class="bi bi-check-circle-fill text-success me-2"></i>Cable testing and certification</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="col-lg-6">
+                <div class="service-card p-4 rounded shadow-sm h-100">
+                    <div class="d-flex align-items-start mb-4">
+                        <div class="service-icon me-4">
+                            <i class="bi bi-wifi text-primary fs-1"></i>
+                        </div>
+                        <div>
+                            <h3 class="fw-bold">Wireless Network Solutions</h3>
+                            <p class="text-muted">High-performance WiFi for modern workplaces</p>
+                        </div>
+                    </div>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Enterprise WiFi deployment</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Wireless site surveys and heat mapping</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Mesh network installation</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Guest network setup and management</li>
+                        <li><i class="bi bi-check-circle-fill text-success me-2"></i>Wireless security implementation</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Service 4 -->
+            <div class="col-lg-6">
+                <div class="service-card p-4 rounded shadow-sm h-100">
+                    <div class="d-flex align-items-start mb-4">
+                        <div class="service-icon me-4">
+                            <i class="bi bi-camera-video text-primary fs-1"></i>
+                        </div>
+                        <div>
+                            <h3 class="fw-bold">CCTV & Surveillance Systems</h3>
+                            <p class="text-muted">Advanced security solutions for your premises</p>
+                        </div>
+                    </div>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>IP camera installation and configuration</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Network Video Recorder (NVR) setup</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Remote monitoring and mobile access</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Motion detection and analytics</li>
+                        <li><i class="bi bi-check-circle-fill text-success me-2"></i>Security system integration</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Service 5 -->
+            <div class="col-lg-6">
+                <div class="service-card p-4 rounded shadow-sm h-100">
+                    <div class="d-flex align-items-start mb-4">
+                        <div class="service-icon me-4">
+                            <i class="bi bi-tools text-primary fs-1"></i>
+                        </div>
+                        <div>
+                            <h3 class="fw-bold">Network Maintenance & Support</h3>
+                            <p class="text-muted">Proactive maintenance for optimal performance</p>
+                        </div>
+                    </div>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>24/7 network monitoring</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Preventive maintenance programs</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Firmware and security updates</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Performance optimization</li>
+                        <li><i class="bi bi-check-circle-fill text-success me-2"></i>Emergency response and troubleshooting</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Service 6 -->
+            <div class="col-lg-6">
+                <div class="service-card p-4 rounded shadow-sm h-100">
+                    <div class="d-flex align-items-start mb-4">
+                        <div class="service-icon me-4">
+                            <i class="bi bi-shield-check text-primary fs-1"></i>
+                        </div>
+                        <div>
+                            <h3 class="fw-bold">Network Security</h3>
+                            <p class="text-muted">Comprehensive security solutions</p>
+                        </div>
+                    </div>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Firewall configuration and management</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>VPN setup for remote access</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Intrusion detection and prevention</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Network access control</li>
+                        <li><i class="bi bi-check-circle-fill text-success me-2"></i>Security audits and compliance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Process Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Our Process</h2>
+            <p class="text-muted">A structured approach to delivering exceptional results</p>
+        </div>
+        <div class="row">
+            <div class="col-md-3 text-center mb-4">
+                <div class="process-step mx-auto mb-3">
+                    <span class="step-number">1</span>
+                </div>
+                <h5>Consultation</h5>
+                <p class="text-muted">Understanding your requirements and goals</p>
+            </div>
+            <div class="col-md-3 text-center mb-4">
+                <div class="process-step mx-auto mb-3">
+                    <span class="step-number">2</span>
+                </div>
+                <h5>Planning</h5>
+                <p class="text-muted">Designing the optimal solution for your needs</p>
+            </div>
+            <div class="col-md-3 text-center mb-4">
+                <div class="process-step mx-auto mb-3">
+                    <span class="step-number">3</span>
+                </div>
+                <h5>Implementation</h5>
+                <p class="text-muted">Professional installation and configuration</p>
+            </div>
+            <div class="col-md-3 text-center mb-4">
+                <div class="process-step mx-auto mb-3">
+                    <span class="step-number">4</span>
+                </div>
+                <h5>Support</h5>
+                <p class="text-muted">Ongoing maintenance and optimization</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

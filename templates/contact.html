@@ -1,0 +1,358 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="page-header py-5 text-white"
+    style="
+                    background: linear-gradient(rgba(0, 100, 255, 0.8), rgba(0, 50, 150, 0.8)),
+                                url('./static/css/images/net.webp');
+                    background-size: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;">"
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h1 class="display-4 fw-bold mb-3">Contact Us</h1>
+                <p class="lead">
+                    Get in touch with our team for networking solutions tailored to your business
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Contact Form & Info -->
+<section class="py-5">
+    <div class="container">
+        <div class="row g-5">
+            <!-- Contact Form -->
+            <div class="col-lg-7">
+                <div class="card shadow-lg border-0">
+                    <div class="card-body p-5">
+                        <h3 class="card-title text-center mb-4">Send us a Message</h3>
+                        <p class="text-center text-muted mb-4">Fill out the form below and our team will get back to you within 24 hours</p>
+                        
+                        <form id="contactForm" method="POST" action="{{ url_for('contact') }}">
+                            <div class="row g-3">
+                                <!-- Name Field -->
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="name" name="name" 
+                                               placeholder="Your Name" required>
+                                        <label for="name">Full Name *</label>
+                                    </div>
+                                    <div class="invalid-feedback" id="nameError">
+                                        Please enter your full name.
+                                    </div>
+                                </div>
+                                
+                                <!-- Company Field -->
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="company" name="company" 
+                                               placeholder="Your Company">
+                                        <label for="company">Company Name</label>
+                                    </div>
+                                </div>
+                                
+                                <!-- Email Field -->
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="email" class="form-control" id="email" name="email" 
+                                               placeholder="Your Email" required>
+                                        <label for="email">Email Address *</label>
+                                    </div>
+                                    <div class="invalid-feedback" id="emailError">
+                                        Please enter a valid email address.
+                                    </div>
+                                </div>
+                                
+                                <!-- Phone Field -->
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="tel" class="form-control" id="phone" name="phone" 
+                                               placeholder="Your Phone">
+                                        <label for="phone">Phone Number</label>
+                                    </div>
+                                </div>
+                                
+                                <!-- Service Interest -->
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <select class="form-select" id="service" name="service">
+                                            <option value="" selected>Select a service</option>
+                                            <option value="network-installation">Network Installation</option>
+                                            <option value="structured-cabling">Structured Cabling</option>
+                                            <option value="wifi-solutions">WiFi Solutions</option>
+                                            <option value="cctv">CCTV Systems</option>
+                                            <option value="maintenance">Network Maintenance</option>
+                                            <option value="security">Network Security</option>
+                                            <option value="consultation">Consultation</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                        <label for="service">Service Interest</label>
+                                    </div>
+                                </div>
+                                
+                                <!-- Message Field -->
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <textarea class="form-control" id="message" name="message" 
+                                                  placeholder="Your Message" rows="4" required></textarea>
+                                        <label for="message">Your Message *</label>
+                                    </div>
+                                    <div class="invalid-feedback" id="messageError">
+                                        Please enter your message.
+                                    </div>
+                                </div>
+                                
+                                <!-- Preferred Contact Method -->
+                                <div class="col-12">
+                                    <label class="form-label">Preferred Contact Method</label>
+                                    <div class="d-flex flex-wrap gap-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="contactMethod" 
+                                                   id="emailMethod" value="email" checked>
+                                            <label class="form-check-label" for="emailMethod">
+                                                <i class="bi bi-envelope me-1"></i> Email
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="contactMethod" 
+                                                   id="phoneMethod" value="phone">
+                                            <label class="form-check-label" for="phoneMethod">
+                                                <i class="bi bi-telephone me-1"></i> Phone
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="contactMethod" 
+                                                   id="bothMethod" value="both">
+                                            <label class="form-check-label" for="bothMethod">
+                                                <i class="bi bi-telephone-plus me-1"></i> Both
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Submit Button -->
+                                <div class="col-12 text-center">
+                                    <button type="submit" class="btn btn-primary btn-lg px-5 py-3">
+                                        <i class="bi bi-send me-2"></i> Send Message
+                                    </button>
+                                </div>
+                                
+                                <!-- Required Fields Note -->
+                                <div class="col-12">
+                                    <p class="text-muted small text-center">
+                                        <i class="bi bi-info-circle me-1"></i> Fields marked with * are required
+                                    </p>
+                                </div>
+                            </div>
+                        </form>
+                        
+                        <!-- Success Message (Hidden by default) -->
+                        <div id="successMessage" class="alert alert-success mt-4 d-none">
+                            <i class="bi bi-check-circle-fill me-2"></i>
+                            <strong>Thank you for your message!</strong> We'll get back to you within 24 hours.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contact Information -->
+            <div class="col-lg-5">
+                <!-- Contact Cards -->
+                <div class="row g-4 mb-4">
+                    <div class="col-12">
+                        <div class="contact-info p-4 rounded shadow-sm h-100">
+                            <i class="bi bi-geo-alt text-primary fs-1 mb-3"></i>
+                            <h5>Our Office</h5>
+                            <p class="mb-0">123 Tech Street</p>
+                            <p class="mb-0">Silicon Valley, CA 94000</p>
+                            <p class="mb-0">United States</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="contact-info p-4 rounded shadow-sm h-100">
+                            <i class="bi bi-telephone text-primary fs-1 mb-3"></i>
+                            <h5>Phone Numbers</h5>
+                            <p class="mb-0">Sales: (555) 123-4567</p>
+                            <p class="mb-0">Support: (555) 123-4568</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="contact-info p-4 rounded shadow-sm h-100">
+                            <i class="bi bi-envelope text-primary fs-1 mb-3"></i>
+                            <h5>Email Addresses</h5>
+                            <p class="mb-0">info@netconnectsolutions.com</p>
+                            <p class="mb-0">sales@netconnectsolutions.com</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Business Hours -->
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body">
+                        <h4 class="card-title mb-3">
+                            <i class="bi bi-clock-history text-primary me-2"></i>
+                            Business Hours
+                        </h4>
+                        <table class="table table-borderless mb-0">
+                            <tbody>
+                                <tr>
+                                    <td><strong>Monday - Friday</strong></td>
+                                    <td class="text-end">8:00 AM - 6:00 PM</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Saturday</strong></td>
+                                    <td class="text-end">9:00 AM - 2:00 PM</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Sunday</strong></td>
+                                    <td class="text-end">Emergency Only</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <!-- Emergency Support -->
+                <div class="alert alert-warning shadow-sm">
+                    <h5 class="alert-heading">
+                        <i class="bi bi-exclamation-triangle me-2"></i>
+                        Emergency Support
+                    </h5>
+                    <p class="mb-2">24/7 emergency support available:</p>
+                    <p class="mb-0">
+                        <i class="bi bi-telephone me-1"></i>
+                        <strong>(555) 123-4569</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Service Areas -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Service Areas</h2>
+            <p class="text-muted">
+                We provide networking and technical services in North Cotabato
+            </p>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-2 col-6">
+                <div class="service-area-card p-3 text-center bg-white rounded shadow-sm location-btn"
+                     data-location="Kabacan, North Cotabato, Philippines">
+                    <i class="bi bi-router-fill text-primary fs-2 mb-2"></i>
+                    <h6 class="mb-0">Kabacan</h6>
+                </div>
+            </div>
+
+            <div class="col-md-2 col-6">
+                <div class="service-area-card p-3 text-center bg-white rounded shadow-sm location-btn"
+                     data-location="Pikit, North Cotabato, Philippines">
+                    <i class="bi bi-wifi text-primary fs-2 mb-2"></i>
+                    <h6 class="mb-0">Pikit</h6>
+                </div>
+            </div>
+
+            <div class="col-md-2 col-6">
+                <div class="service-area-card p-3 text-center bg-white rounded shadow-sm location-btn"
+                     data-location="Aleosan, North Cotabato, Philippines">
+                    <i class="bi bi-diagram-3-fill text-primary fs-2 mb-2"></i>
+                    <h6 class="mb-0">Aleosan</h6>
+                </div>
+            </div>
+
+            <div class="col-md-2 col-6">
+                <div class="service-area-card p-3 text-center bg-white rounded shadow-sm location-btn"
+                     data-location="Kidapawan City, Philippines">
+                    <i class="bi bi-building text-primary fs-2 mb-2"></i>
+                    <h6 class="mb-0">Kidapawan</h6>
+                </div>
+            </div>
+
+            <div class="col-md-2 col-6">
+                <div class="service-area-card p-3 text-center bg-white rounded shadow-sm location-btn"
+                     data-location="Matalam, North Cotabato, Philippines">
+                    <i class="bi bi-hdd-network-fill text-primary fs-2 mb-2"></i>
+                    <h6 class="mb-0">Matalam</h6>
+                </div>
+            </div>
+
+            <div class="col-md-2 col-6">
+                <div class="service-area-card p-3 text-center bg-white rounded shadow-sm location-btn"
+                     data-location="M'lang, North Cotabato, Philippines">
+                    <i class="bi bi-shield-lock-fill text-primary fs-2 mb-2"></i>
+                    <h6 class="mb-0">M'lang</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Network Coverage Overview -->
+<section class="py-5">
+    <div class="container">
+        <div class="col-lg-10 mx-auto">
+            <h4 class="text-center mb-4">
+                <i class="bi bi-diagram-3 me-2"></i>
+                Network Coverage Overview
+            </h4>
+
+            <div class="ratio ratio-16x9 rounded shadow-lg overflow-hidden">
+                <iframe
+                    id="serviceMap"
+                    src="https://www.google.com/maps?q=Kabacan,+North+Cotabato,+Philippines&output=embed"
+                    style="border:0;"
+                    loading="lazy">
+                </iframe>
+            </div>
+
+            <p id="mapLabel" class="text-center text-muted mt-3">
+                Showing network coverage: Kabacan
+            </p>
+        </div>
+    </div>
+</section>
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const buttons = document.querySelectorAll(".location-btn");
+    const map = document.getElementById("serviceMap");
+    const label = document.getElementById("mapLabel");
+
+    buttons.forEach(btn => {
+        btn.addEventListener("click", () => {
+            const location = btn.dataset.location;
+
+            map.src = `https://www.google.com/maps?q=${encodeURIComponent(location)}&output=embed`;
+            label.textContent = `Showing network coverage: ${location}`;
+
+            // auto-scroll to map (nice UX)
+            map.scrollIntoView({ behavior: "smooth", block: "center" });
+
+            // active state
+            buttons.forEach(b => b.classList.remove("active-area"));
+            btn.classList.add("active-area");
+        });
+    });
+
+});
+</script>
+
+
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/contact-form.js') }}"></script>
+{% endblock %}

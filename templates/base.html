@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NetConnect Solutions - {% block title %}{% endblock %}</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Professional networking solutions for businesses. Network installation, structured cabling, WiFi setup, CCTV, and maintenance services.">
+    <meta name="keywords" content="networking, cabling, WiFi setup, CCTV, IT infrastructure, network maintenance">
+    <meta name="author" content="NetConnect Solutions">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+</head>
+<body>
+    <!-- Navigation Bar - Updated with white background -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="{{ url_for('home') }}">
+                <img src="https://cdn-icons-png.flaticon.com/512/2885/2885417.png" alt="NetConnect Solutions Logo" height="40" class="me-2">
+                <span class="brand-name fs-3 fw-bold text-primary">NetConnect</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item mx-1">
+                        <a class="nav-link px-3 py-2 {% if title == 'Home' %}active text-white bg-primary{% else %}text-dark{% endif %} rounded" 
+                           href="{{ url_for('home') }}">
+                            Home
+                        </a>
+                    </li>
+                    <li class="nav-item mx-1">
+                        <a class="nav-link px-3 py-2 {% if title == 'Services' %}active text-white bg-primary{% else %}text-dark{% endif %} rounded" 
+                           href="{{ url_for('services') }}">
+                            Services
+                        </a>
+                    </li>
+                    <li class="nav-item mx-1">
+                        <a class="nav-link px-3 py-2 {% if title == 'About Us' %}active text-white bg-primary{% else %}text-dark{% endif %} rounded" 
+                           href="{{ url_for('about') }}">
+                            About Us
+                        </a>
+                    </li>
+                    <li class="nav-item mx-1">
+                        <a class="nav-link px-3 py-2 {% if title == 'Contact' %}active text-white bg-primary{% else %}text-dark{% endif %} rounded" 
+                           href="{{ url_for('contact') }}">
+                            Contact
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="d-flex align-items-center mb-3">
+                       <img src="https://img.icons8.com/ios-filled/100/ffffff/cloud-lighting.png" alt="NetConnect Solutions Logo" height="30" class="me-2">
+                        <h5 class="mb-0">NetConnect Solutions</h5>
+                    </div>
+                    <p>Professional networking infrastructure solutions for businesses of all sizes.</p>
+                    <div class="social-links">
+                        <a href="#" class="text-white me-3"><i class="bi bi-linkedin fs-5"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-twitter fs-5"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-facebook fs-5"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="{{ url_for('home') }}" class="text-white-50 text-decoration-none">Home</a></li>
+                        <li><a href="{{ url_for('services') }}" class="text-white-50 text-decoration-none">Services</a></li>
+                        <li><a href="{{ url_for('about') }}" class="text-white-50 text-decoration-none">About Us</a></li>
+                        <li><a href="{{ url_for('contact') }}" class="text-white-50 text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="mb-3">Contact Info</h5>
+                    <p class="mb-1"><i class="bi bi-geo-alt me-2"></i> Pebpoloan, Carment, North Cotabato</p>
+                    <p class="mb-1"><i class="bi bi-telephone me-2"></i> 09539523055</p>
+                    <p class="mb-1"><i class="bi bi-envelope me-2"></i> Norhankuyab@gmail.com</p>
+                </div>
+            </div>
+            <hr class="bg-light my-4">
+            <div class="text-center">
+                <p class="mb-0">&copy; <span id="currentYear"></span> NetConnect Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    
+    {% block scripts %}{% endblock %}
+</body>
+</html>
